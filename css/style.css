@@ -1,4 +1,4 @@
-:root{
+:root {
     /*Colors text*/
     --dark-blue: hsl(238, 29%, 16%);
     --soft-red: hsl(14, 88%, 65%);
@@ -7,19 +7,161 @@
     --soft-violet: hsl(273, 75%, 66%);
     --soft-blue: hsl(240, 73%, 65%);
 
+    --white: #fff;
+
     /*Colors text*/
     --dark-grayish-blue: hsl(237, 12%, 33%);
     --dark-grayis-blue: hsl(240, 6%, 50%);
 
     /*Color*/
-    -light-grayish-blue: hsl(240, 5%, 91%);
+    --light-grayish-blue: hsl(240, 5%, 91%);
 }
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
+html {
     font-size: 62.5%;
     font-family: 'Kumbh Sans', sans-serif;
+}
+
+/*MAIN*/
+/*Background*/
+main {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(var(--soft-violet), var(--soft-blue));
+}
+
+/*CARD*/
+main .card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 370px;
+    min-height: auto;
+    top: 50px;
+    background-color: var(--white);
+    border-radius: 25px;
+}
+
+/*CARD-IMG*/
+main .card-top{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+main .card-top img:nth-child(1){
+    position: absolute;
+    width: 70%;
+    top: -115px;
+}
+main .card-top img:nth-child(2){
+    position: absolute;
+    width: 70%;
+}
+
+/*CARD-MAIN*/
+main .card-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: 130px 0 0 0;
+    padding: 0 0 25px 0;
+}
+main .card-main__title{
+    font-size: 4rem;
+    text-align: center;
+    color: var(--dark-blue);
+    margin: 0 0 30px 0;
+}
+
+/*CARD-MAIN FAQ*/
+main .card-main__faq{
+    width: 85%;
+    height: auto;
+
+}
+main .card-main__faq li{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 0 20px 0;
+    padding: 0 0 20px 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    list-style: none;
+    color: var(--dark-grayish-blue);
+    border-bottom: 1.7px solid var(--light-grayish-blue);
+}
+main .card-main__faq li label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+main .card-main__faq li p{
+    padding: 10px 0 0 0;
+    font-size: 1.5rem;
+    color: var(--dark-grayis-blue);
+}
+
+/*CARD-MAIN ARROWS*/
+main .card-main__faq li span{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-image: url(../images/icon-arrow-off.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotate(90deg);
+    transition: transform 0.5s;
+
+}
+
+
+/*CARD-MAIN ARROWS ON & OFF*/
+main .card-main__faq li input{
+    display: none;
+}
+main .card-main__faq li input:checked ~ span {
+    transform: rotate(-90deg);
+    transition: transform 0.5s;
+}
+main .card-main__faq li input:checked ~ label {
+    font-weight: 700;
+}
+
+
+
+
+/*CARD-MAIN ARROWS ON & OFF + ANSWER ON & OFF */
+main .card-main__faq li p{
+    position: absolute;
+    opacity: 0;
+    top: 10px;
+    padding: 10px 0 0 0;
+    font-size: 1.5rem;
+    color: var(--dark-grayis-blue);
+}
+
+main .card-main__faq li input:checked ~ p{
+    position: relative;
+    opacity: 1;
+    top: 0;
 }
