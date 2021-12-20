@@ -43,10 +43,11 @@ main .card{
     flex-direction: column;
     align-items: center;
     width: 370px;
-    min-height: auto;
+    height: auto;
     top: 50px;
     background-color: var(--white);
     border-radius: 25px;
+    box-shadow: 0 25px 60px hsla(238, 29%, 16%, 0.3);
 }
 
 /*CARD-IMG*/
@@ -58,15 +59,26 @@ main .card-top{
     width: 100%;
     height: auto;
 }
-main .card-top img:nth-child(1){
+main .card-top span:nth-child(1){
     position: absolute;
+    background-image: url(../images/illustration-woman-online-mobile.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
     width: 70%;
+    height: 195px;
     top: -115px;
 }
-main .card-top img:nth-child(2){
+main .card-top span:nth-child(2){
     position: absolute;
+    background-image: url(../images/bg-pattern-mobile.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
     width: 70%;
+    height: 110px;
 }
+
 
 /*CARD-MAIN*/
 main .card-main{
@@ -94,18 +106,13 @@ main .card-main__faq{
 main .card-main__faq li{
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
 
     justify-content: space-between;
     align-items: center;
 
-    margin: 0 0 20px 0;
-    padding: 0 0 20px 0;
     font-size: 1.6rem;
     font-weight: 400;
-    list-style: none;
-    color: var(--dark-grayish-blue);
-    border-bottom: 1.7px solid var(--light-grayish-blue);
 }
 main .card-main__faq li label{
     display: flex;
@@ -119,9 +126,18 @@ main .card-main__faq li p{
     font-size: 1.5rem;
     color: var(--dark-grayis-blue);
 }
+main .card-main__faq li .li-margin-bottom{
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    margin: 0 0 20px 0;
+    padding: 0 0 20px 0;
+    color: var(--dark-grayish-blue);
+    border-bottom: 1.7px solid var(--light-grayish-blue);
+}
+
 
 /*CARD-MAIN ARROWS*/
-main .card-main__faq li span{
+main .card-main__faq li .li-arrow{
     display: inline-block;
     width: 13px;
     height: 13px;
@@ -139,14 +155,13 @@ main .card-main__faq li span{
 main .card-main__faq li input{
     display: none;
 }
-main .card-main__faq li input:checked ~ span {
+main .card-main__faq li input:checked ~ .li-arrow {
     transform: rotate(-90deg);
     transition: transform 0.5s;
 }
 main .card-main__faq li input:checked ~ label {
     font-weight: 700;
 }
-
 
 
 
@@ -164,4 +179,89 @@ main .card-main__faq li input:checked ~ p{
     position: relative;
     opacity: 1;
     top: 0;
+    
+}
+
+main .card-main__faq--box{
+    display: none;
+}
+
+
+
+
+
+@media(min-width: 800px) {
+    
+    main .card{
+        display: flex;
+        flex-direction: row;
+        width: 1000px;
+        height: 550px;
+        top: 0;
+    }
+    main .card-top {
+        height: 550px;
+        overflow-x: hidden;
+    } 
+    main .card-top span:nth-child(1){
+        display: absolute;
+        background-image: url(../images/illustration-woman-online-desktop.svg);
+        background-size: auto;
+        width: 100%;
+        height: 370px;
+        right: 95px;
+        top: calc(50% - 185px);
+    }
+    main .card-top span:nth-child(2){
+        position: absolute;
+        background-image: url(../images/bg-pattern-desktop.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 550px;
+        right: 95px; 
+        
+    }
+
+
+    /*CARD MAIN*/
+    main .card-main{
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }   
+    main .card-main__title{
+        width: 75%;
+        font-size: 3.5rem;
+        text-align: start;
+    }
+    main .card-main__faq{
+        width: 75%;
+    }
+    main .card-main__faq li:hover {
+        color: var(--soft-red)
+    }
+    main .card-main__faq li:hover ~ .card-main__faq--box{
+        transform: translateX(-45px);
+        transition: transform 1s cubic-bezier(0,.75,.45,.99);
+    }
+
+    main .card-main__faq--box{
+        display: inline-block;
+        position: absolute;
+        background-image: url(../images/illustration-box-desktop.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        width: 100%;
+        height: 200px;
+        left: -50%;
+        top: calc(50% - 55px);
+        transition: transform 1s cubic-bezier(0,.75,.45,.99);
+    }
+
 }
