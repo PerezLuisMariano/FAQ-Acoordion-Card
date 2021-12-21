@@ -1,11 +1,11 @@
-## Frontend Mentor - Stats preview card component
+## Frontend Mentor
 
 ### Screenshot
-![version-desk](design/me/)
+![version-desk](design/mine/desk.png)
 
 
 ### Links
-- [Live Site ](https://perezluismariano.github.io//)
+- [Live Site ](https://perezluismariano.github.io//5-FAQAcoordionCARD)
 
 ### Built with
 - Semantic HTML5 markup

@@ -188,6 +188,35 @@ main .card-main__faq--box{
 
 
 
+/*FOOTER ATTRIBUTION*/
+footer{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    background: var(--main-background);
+    bottom: 0;
+}
+footer .attribution p{
+    font-family: 'Bebas Neue';
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--dark-blue);
+}
+footer .attribution a{
+    text-decoration: none;
+    color: var(--main-violet);
+    color: var(--white);
+}
+
+
+
+
 
 
 @media(min-width: 800px) {
