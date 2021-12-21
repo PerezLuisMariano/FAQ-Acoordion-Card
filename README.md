@@ -5,7 +5,7 @@
 
 
 ### Links
-- [Live Site ](https://perezluismariano.github.io//5-FAQAcoordionCARD)
+- [Live Site ](https://perezluismariano.github.io//FAQ-Acoordion-Card)
 
 ### Built with
 - Semantic HTML5 markup
